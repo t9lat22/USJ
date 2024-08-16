@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+  <h1 class="logo">T9</h1>
+
+<style>
+    .logo {
+      right:45%;
+      top:150px;
+      position:fixed;
+      font-size:200px;
+      color:white;
+    }
+    </style>
+
+
+
+<style>
+    .clock {
+  
+      top:0;
+      right:45%;
+      color:white;
+     font-size:24px;
+      position:fixed;
+     color:white;
+      background-color:black;
+      padding:10px 20px; 
+      border-radius:20px;
+        
+  
+    }
+  </style>
+  
+  
+  
+  <script>
+  function updateTime() {
+  var date = new Date();
+  var options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+  var formattedTime = date.toLocaleTimeString('en-US', options);
+  document.getElementById("time").innerHTML = formattedTime;
+  }
+  
+  setInterval(updateTime, 1000); 
+  </script>
+  
+  <style>
+     .battery {
+       bottom:0;
+      right:0;
+      color:white;
+      position:fixed;
+      padding:10px 20px;
+       background-color:black;
+       border-radius:20px;
+       
+  
+    }
+  </style>
+  
+  
+  
+  <script>
+  if ('getBattery' in navigator) {
+  navigator.getBattery().then(function(battery) {
+    updateBatteryStatus(battery);
+  
+    battery.addEventListener('levelchange', function() {
+      updateBatteryStatus(battery);
+    });
+  });
+  } else {
+  document.getElementById('batteryPercentage').innerHTML = 'Battery API not supported.';
+  }
+  
+  function updateBatteryStatus(battery) {
+  var percentage = Math.floor(battery.level * 100);
+  document.getElementById('batteryPercentage').innerHTML = percentage + '%';
+  }
+  </script>
+  
+  <style>
+  .navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 650px;
+  background-color: #000000; 
+  border-radius:30px;
+  gap:30px; 
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    bottom:0px;
+    left:24%;
+  }
+  </style>
+  
+  <div class="navbar">
+  <a href='test2.html'>
+  <img src="https://t9os.pages.dev/games.png">
+  </a>
+  <a href="/static/index.html">
+  <img src="https://t9os.pages.dev/web.png">
+  </a>
+  <a href="settings.html">
+  <img src="https://t9os.pages.dev/settings22.png">
+  </a>
+  <a href="king.html">
+  <img src="https://i.ibb.co/K9ddYPy/image-removebg-preview-8.png">
+  </a>
+  <a href="news.html">
+  <img src="https://i.ibb.co/9whrkZw/image-removebg-preview-9.png">
+  </a>
+  
+  <h2 class="battery"  id="batteryPercentage"></h2>
+      <div class="clock" id="time"></div>
+  
+  </div>
+  
+  <style>
+  img {
+    width:49px;
+    padding:10px 20px;
+    border-radius:15px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  img:hover {
+    background-color:#141414;
+    border-radius:15px;
+  }
+  
+  </style>
+  <style>
+  body {
+        background-image:url("background2.jpg");
+    font-family: sans-serif;
+  }
+  .play{
+    width:100px;
+    top:40px;
+    left:40px;
+    position:fixed;
+  }
+  .play2{
+    width:100px;
+    top:170px;
+    left:40px;
+    position:fixed;
+  }
+  </style>
+<a href="usService.html">
+  <img class="play" src="amongus2.png">
+  </a>
+  <a href="cookie.html">
+    <img class="play2" src="cookieclicker2.png">
+    </a>
+    
+  
+  </html> 
+
